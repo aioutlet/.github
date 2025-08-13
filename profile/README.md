@@ -16,28 +16,44 @@
 - 🔐 **Authentication & Authorization** — Supports secure login via email/password and OAuth2 (Google, Facebook, Twitter), JWT authentication, and role-based access control.
 - 📡 **API-First & Event-Driven** — RESTful APIs and asynchronous communication using message queues for scalability and loose coupling.
 
+## 🏗️ Architecture Highlights
+
+- **🌐 Polyglot Architecture**: Each service uses the technology best suited for its requirements
+- **🔄 Event-Driven Communication**: Services communicate via message queues and events
+- **📊 Comprehensive Audit Logging**: Full activity tracking and compliance monitoring
+- **🔒 Multi-Factor Authentication**: Enhanced security with OTP and account linking
+- **⚡ High-Performance Services**: Go-based inventory service for speed-critical operations
+- **🎯 Saga Pattern**: Distributed transaction management in order processing
+- **📈 Scalable Data Storage**: PostgreSQL, MongoDB, and Redis for different data patterns
+- **🛡️ Security-First Design**: JWT authentication, service-to-service tokens, and audit trails
 
 ## 🧩 Microservices Overview
 
-Each microservice is hosted in its own GitHub repository for separation of concerns, independent scalability, and streamlined DevOps workflows. Key services include:
+Each microservice is hosted in its own GitHub repository for separation of concerns, independent scalability, and streamlined DevOps workflows. The platform demonstrates a polyglot architecture with different technologies chosen for each service's specific requirements:
 
-| Service                        | Description                                                                 |
-|-------------------------------|-----------------------------------------------------------------------------|
-| 🔐 [**auth-service**](https://github.com/AIOutlet/auth-service)             | Handles authentication, social login (OAuth2), and JWT issuance.         |
-| 👤 [**user-service**](https://github.com/AIOutlet/user-service)             | Manages user profiles, identity records, and preferences.                |
-| 🛍️ [**product-service**](https://github.com/AIOutlet/product-service)         | Handles product catalog, categories, attributes, and search.             |
-| 🧾 [**order-service**](https://github.com/AIOutlet/order-service)             | Accepts and stores customer orders.                                      |
-| ⚙️ [**order-processor-service**](https://github.com/AIOutlet/order-processor-service) | Processes orders asynchronously via message queue.                      |
-| 💳 [**payment-service**](https://github.com/AIOutlet/payment-service)         | Integrates with payment gateways for processing transactions.            |
-| 📦 [**inventory-service**](https://github.com/AIOutlet/inventory-service)     | Manages product stock levels, reservations, and warehouse sync.          |
-| 🛒 [**cart-service**](https://github.com/AIOutlet/cart-service)               | Tracks user carts and handles cart operations.                           |
-| ⭐ [**review-service**](https://github.com/AIOutlet/review-service)           | Enables users to submit ratings and reviews for products.                |
-| 🤖 [**recommendation-service**](https://github.com/AIOutlet/recommendation-service) _(planned)_ | Uses AI/ML models to deliver personalized product suggestions. |
-| 📣 [**notification-service**](https://github.com/AIOutlet/notification-service) | Sends email/SMS/real-time notifications for key events.         |
-| 🛠️ [**admin-service**](https://github.com/AIOutlet/admin-service) _(WIP)_    | Back-office operations, dashboard, analytics, and user management.       |
+| Service                                                                               | Technology            | Description                                                                  |
+| ------------------------------------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------- |
+| 🔐 [**auth-service**](https://github.com/aioutlet/auth-service)                       | Node.js + Express     | Handles authentication, MFA, social login (OAuth2), and JWT issuance         |
+| 👤 [**user-service**](https://github.com/aioutlet/user-service)                       | Node.js + Express     | Manages user profiles, identity records, preferences, and account linking    |
+| �️ [**admin-service**](https://github.com/aioutlet/admin-service)                     | Node.js + Express     | Back-office operations, dashboard, analytics, and user management            |
+| 📋 [**audit-service**](https://github.com/aioutlet/audit-service)                     | Node.js + TypeScript  | Comprehensive audit logging, compliance tracking, and activity monitoring    |
+| 🛍️ [**product-service**](https://github.com/aioutlet/product-service)                 | Python + FastAPI      | Handles product catalog, categories, attributes, search, and recommendations |
+| � [**inventory-service**](https://github.com/aioutlet/inventory-service)              | Go + Gin              | High-performance inventory management, stock tracking, and reservations      |
+| 🧾 [**order-service**](https://github.com/aioutlet/order-service)                     | .NET 8 + ASP.NET Core | Order creation, validation, and lifecycle management                         |
+| � [**payment-service**](https://github.com/aioutlet/payment-service)                  | .NET 8 + ASP.NET Core | Payment processing, gateway integration, and transaction security            |
+| ⚙️ [**order-processor-service**](https://github.com/aioutlet/order-processor-service) | Java + Spring Boot    | Asynchronous order processing with saga pattern and event sourcing           |
+| 📣 [**notification-service**](https://github.com/aioutlet/notification-service)       | Node.js + Express     | Multi-channel notifications (email, SMS, push, WebSocket)                    |
 
+### 🚀 Planned Services
+
+| Service                       | Technology            | Description                                            |
+| ----------------------------- | --------------------- | ------------------------------------------------------ |
+| � **cart-service**            | Node.js/Redis         | Shopping cart management and session handling          |
+| ⭐ **review-service**         | Python + FastAPI      | Product reviews, ratings, and sentiment analysis       |
+| 🤖 **recommendation-service** | Python + ML/AI        | AI-powered product recommendations and personalization |
+| 🔍 **search-service**         | Elasticsearch         | Advanced product search with filters and facets        |
+| 📊 **analytics-service**      | Python + Apache Spark | Business intelligence and real-time analytics          |
 
 ## 📃 License
 
 MIT License — feel free to use, extend, and modify.
-
